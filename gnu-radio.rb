@@ -1,4 +1,4 @@
-class Gnuradio < Formula
+class GnuRadio < Formula
     homepage 'http://gnuradio.org'
     url 'http://gnuradio.org/redmine/attachments/download/320/gnuradio-3.5.3.tar.gz'
     sha1 '661b9ac54cefa6d1b3de3dbd4f3bf466ac846ee4'
