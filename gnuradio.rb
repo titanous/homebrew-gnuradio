@@ -1,7 +1,7 @@
 class Gnuradio < Formula
     homepage 'http://gnuradio.org'
-    url 'http://gnuradio.org/redmine/attachments/download/320/gnuradio-3.5.3.tar.gz'
-    sha1 '661b9ac54cefa6d1b3de3dbd4f3bf466ac846ee4'
+    url  'http://gnuradio.org/redmine/attachments/download/326/gnuradio-3.6.0.tar.gz'
+    sha1 '7dfb82924cfff2e3af1dc744561d40a8030b05cc'
 
     depends_on 'pkg-config' => :build
     depends_on 'Cheetah' => :python
