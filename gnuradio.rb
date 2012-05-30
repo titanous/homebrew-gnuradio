@@ -4,8 +4,13 @@ class Gnuradio < Formula
     sha1 '7dfb82924cfff2e3af1dc744561d40a8030b05cc'
 
     depends_on 'pkg-config' => :build
+    depends_on 'autoconf' => :build
+    depends_on 'automake' => :build
+    depends_on 'libtool' => :build
     depends_on 'Cheetah' => :python
     depends_on 'lxml' => :python
+    depends_on 'scipy' => :python
+    depends_on 'matplotlib' => :python
     depends_on 'boost'
     depends_on 'cppunit'
     depends_on 'guile'
