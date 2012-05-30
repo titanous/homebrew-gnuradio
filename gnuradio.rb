@@ -10,9 +10,11 @@ class Gnuradio < Formula
     depends_on 'cmake' => :build
     depends_on 'Cheetah' => :python
     depends_on 'lxml' => :python
+    depends_on 'gfortran'
+    depends_on 'numpy' => :python
+    depends_on 'umfpack'
     depends_on 'scipy' => :python
     depends_on 'matplotlib' => :python
-    depends_on 'numpy' => :python
     depends_on 'boost'
     depends_on 'cppunit'
     depends_on 'guile'
@@ -25,7 +27,6 @@ class Gnuradio < Formula
     depends_on 'sdl'
     depends_on 'pyqt'
     depends_on 'pyqwt'
-    depends_on 'gfortran'
     depends_on 'libusb'
 
     def install
