@@ -14,6 +14,10 @@ class Gnuradio < Formula
     depends_on 'swig'
     depends_on 'pygtk'
     depends_on 'wxmac'
+    depends_on 'sdcc'
+    depends_on 'sdl'
+    depends_on 'pyqt'
+    depends_on 'pyqwt'
 
     def install
         # "manual" autoreconf to get '.dylib' extension on shared lib
