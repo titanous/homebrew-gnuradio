@@ -7,6 +7,7 @@ class Gnuradio < Formula
     depends_on 'autoconf' => :build
     depends_on 'automake' => :build
     depends_on 'libtool' => :build
+    depends_on 'cmake' => :build
     depends_on 'Cheetah' => :python
     depends_on 'lxml' => :python
     depends_on 'scipy' => :python
@@ -24,6 +25,8 @@ class Gnuradio < Formula
     depends_on 'sdl'
     depends_on 'pyqt'
     depends_on 'pyqwt'
+    depends_on 'gfortran'
+    depends_on 'libusb'
 
     def install
         # "manual" autoreconf to get '.dylib' extension on shared lib
