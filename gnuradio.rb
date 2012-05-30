@@ -11,6 +11,7 @@ class Gnuradio < Formula
     depends_on 'lxml' => :python
     depends_on 'scipy' => :python
     depends_on 'matplotlib' => :python
+    depends_on 'numpy' => :python
     depends_on 'boost'
     depends_on 'cppunit'
     depends_on 'guile'
