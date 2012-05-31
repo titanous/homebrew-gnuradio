@@ -25,6 +25,7 @@ class Gnuradio < Formula
   depends_on 'doxygen' if ARGV.include?('--with-docs')
 
   fails_with :clang do
+    build 318
     cause "Volk compiles but doesn't work."
   end
 
