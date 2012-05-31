@@ -20,7 +20,7 @@ These steps have been tested on OS X Lion 10.7.4 with Xcode 4.3.2.
 
 - Install the python package prerequisites:
   ```sh
-  brew install gfortran umfpack pyqt pyqwt pygtk
+  brew install gfortran umfpack
   ```
 
 - Install the prerequisite python packages:
@@ -28,6 +28,13 @@ These steps have been tested on OS X Lion 10.7.4 with Xcode 4.3.2.
   sudo easy_install pip
   sudo pip install Cheetah lxml numpy scipy matplotlib
   ```
+
+- Install gnuradio (add `--with-qt` for `gr-qtgui`):
+  ```sh
+  brew install gnuradio
+  ```
+
+### Optional (for `gr-wxgui`)
 
 - Install `wxmac` 2.9 using llvm (the stable version is broken on Lion) with python bindings:
   ```sh

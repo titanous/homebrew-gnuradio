@@ -11,16 +11,19 @@ class Gnuradio < Formula
   depends_on 'matplotlib' => :python
   depends_on 'boost'
   depends_on 'cppunit'
-  depends_on 'guile'
   depends_on 'gsl'
   depends_on 'fftw'
   depends_on 'swig'
   depends_on 'pygtk'
-  depends_on 'sdcc'
   depends_on 'sdl'
-  depends_on 'pyqt'
-  depends_on 'pyqwt'
-  depends_on 'libusb'
+  depends_on 'pyqt' if ARGV.include?('--with-qt')
+  depends_on 'pyqwt' if ARGV.include?('--with-qt')
+
+  def options
+    [
+      ['--with-qt', 'Build gr-qtgui.']
+    ]
+  end
 
   def patches
     DATA
@@ -63,3 +66,15 @@ index f54aa4f..db0ce3c 100644
  GR_PYTHON_CHECK_MODULE("numpy"             numpy        True                                        NUMPY_FOUND)
  
  ########################################################################
+diff --git a/gr-qtgui/lib/spectrumdisplayform.ui b/gr-qtgui/lib/spectrumdisplayform.ui
+index 049d4ff..a40502b 100644
+--- a/gr-qtgui/lib/spectrumdisplayform.ui
++++ b/gr-qtgui/lib/spectrumdisplayform.ui
+@@ -518,7 +518,6 @@
+   </layout>
+  </widget>
+  <layoutdefault spacing="6" margin="11"/>
+- <pixmapfunction>qPixmapFromMimeSource</pixmapfunction>
+  <customwidgets>
+   <customwidget>
+    <class>QwtWheel</class>
