@@ -2,9 +2,9 @@ class GrOsmosdr < Formula
   homepage 'http://sdr.osmocom.org/trac/wiki/GrOsmoSDR'
   head 'git://git.osmocom.org/gr-osmosdr'
 
-  depends_on 'libtool' => :build
   depends_on 'cmake' => :build
-  depends_on 'rtl-sdr'
+  depends_on 'gnuradio'
+  depends_on 'rtlsdr'
 
   def install
     mkdir 'build' do
