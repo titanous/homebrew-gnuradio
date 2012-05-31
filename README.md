@@ -33,10 +33,22 @@ These steps have been tested on OS X Lion 10.7.4 with Xcode 4.3.2.
   ```sh
   brew install gnuradio
   ```
+- Create the `~/.gnuradio/config.conf` config file for custom block support:
+  ```ini
+  [grc]
+  local_blocks_path=/usr/local/share/gnuradio/grc/blocks
+  ```
 
 ### Optional (for `gr-wxgui`)
 
 - Install `wxmac` 2.9 using llvm (the stable version is broken on Lion) with python bindings:
   ```sh
   brew install wxmac --devel --use-llvm --python
+  ```
+
+### Optional (for rtl-sdr devices)
+
+- Install `rtlsdr` and related blocks:
+  ```sh
+  brew install rtlsdr gr-osmosdr gr-baz --HEAD
   ```

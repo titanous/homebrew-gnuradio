@@ -40,6 +40,16 @@ class Gnuradio < Formula
       system 'make install'
     end
   end
+
+  def caveats
+    <<-EOS.undent
+    If you want to use custom blocks, you'll have to create this file:
+
+    ~/.gnuradio/config.conf
+      [grc]
+      local_blocks_path=/usr/local/share/gnuradio/grc/blocks
+    EOS
+  end
 end
 
 __END__
