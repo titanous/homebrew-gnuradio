@@ -42,8 +42,8 @@ class Gnuradio < Formula
 
   def install
     mkdir 'build' do
-      args = ["-DCMAKE_PREFIX_PATH=#{prefix}"] + std_cmake_args
-      args += ["-DENABLE_GR_QTGUI=OFF", "-DQWT_INCLUDE_DIRS=#{HOMEBREW_PREFIX}/lib/qwt.framework/Headers"] unless ARGV.include?('--with-qt')
+      args = ["-DCMAKE_PREFIX_PATH=#{prefix}", "-DQWT_INCLUDE_DIRS=#{HOMEBREW_PREFIX}/lib/qwt.framework/Headers"] + std_cmake_args
+      args << '-DENABLE_GR_QTGUI=OFF' unless ARGV.include?('--with-qt')
       args << '-DENABLE_DOXYGEN=OFF' unless ARGV.include?('--with-docs')
       system 'cmake', '..', *args
       system 'make'
