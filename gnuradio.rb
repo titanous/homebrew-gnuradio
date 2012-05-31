@@ -20,7 +20,6 @@ class Gnuradio < Formula
     depends_on 'fftw'
     depends_on 'swig'
     depends_on 'pygtk'
-    depends_on 'wxmac'
     depends_on 'sdcc'
     depends_on 'sdl'
     depends_on 'pyqt'
