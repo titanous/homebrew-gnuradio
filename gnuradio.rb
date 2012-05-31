@@ -31,7 +31,7 @@ class Gnuradio < Formula
   def options
     [
       ['--with-qt', 'Build gr-qtgui.'],
-      ['--with-qt', 'Build docs.']
+      ['--with-docs', 'Build docs.']
     ]
   end
 
