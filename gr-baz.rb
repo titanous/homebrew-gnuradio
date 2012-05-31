@@ -8,6 +8,7 @@ class GrBaz < Formula
   depends_on 'automake' => :build
   depends_on 'libtool' => :build
   depends_on 'libusb'
+  depends_on 'gnuradio'
 
   def install
     args = ["--prefix=#{prefix}"]
