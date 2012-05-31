@@ -10,9 +10,7 @@ class GrOsmosdr < Formula
 
   def install
     mkdir 'build' do
-      system 'cmake', '..',
-                      "-DCMAKE_PREFIX_PATH=#{prefix}",
-                      *std_cmake_args
+      system 'cmake', '..', *std_cmake_args
       system 'make'
       system 'make install'
     end

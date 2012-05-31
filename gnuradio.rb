@@ -18,12 +18,16 @@ class Gnuradio < Formula
   depends_on 'swig'
   depends_on 'pygtk'
   depends_on 'sdl'
+  depends_on 'libusb'
+  depends_on 'orc'
   depends_on 'pyqt' if ARGV.include?('--with-qt')
   depends_on 'pyqwt' if ARGV.include?('--with-qt')
+  depends_on 'doxygen' if ARGV.include?('--with-docs')
 
   def options
     [
-      ['--with-qt', 'Build gr-qtgui.']
+      ['--with-qt', 'Build gr-qtgui.'],
+      ['--with-qt', 'Build docs.']
     ]
   end
 
@@ -33,9 +37,10 @@ class Gnuradio < Formula
 
   def install
     mkdir 'build' do
-      system 'cmake', '..',
-                      "-DCMAKE_PREFIX_PATH=#{prefix}",
-                      *std_cmake_args
+      args = ["-DCMAKE_PREFIX_PATH=#{prefix}"]
+      args << '-DENABLE_GR_QTGUI=OFF' unless ARGV.include?('--with-qt')
+      args << '-DENABLE_DOXYGEN=OFF' unless ARGV.include?('--with-docs')
+      system 'cmake', '..', *args, *std_cmake_args
       system 'make'
       system 'make install'
     end
