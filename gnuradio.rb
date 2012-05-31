@@ -43,7 +43,7 @@ class Gnuradio < Formula
   def install
     mkdir 'build' do
       args = ["-DCMAKE_PREFIX_PATH=#{prefix}"] + std_cmake_args
-      args << '-DENABLE_GR_QTGUI=OFF' unless ARGV.include?('--with-qt')
+      args += ["-DENABLE_GR_QTGUI=OFF", "-DQWT_INCLUDE_DIRS=#{HOMEBREW_PREFIX}/lib/qwt.framework/Headers"] unless ARGV.include?('--with-qt')
       args << '-DENABLE_DOXYGEN=OFF' unless ARGV.include?('--with-docs')
       system 'cmake', '..', *args
       system 'make'
@@ -63,18 +63,6 @@ class Gnuradio < Formula
 end
 
 __END__
-diff --git a/cmake/Modules/FindQwt.cmake b/cmake/Modules/FindQwt.cmake
-index f2cf344..0d3f45c 100644
---- a/cmake/Modules/FindQwt.cmake
-+++ b/cmake/Modules/FindQwt.cmake
-@@ -12,6 +12,7 @@ find_path (QWT_INCLUDE_DIRS
- 	/usr/include/qwt
- 	/opt/local/include/qwt
- 	/sw/include/qwt
-+	/usr/local/lib/qwt.framework/Headers
- )
- 
- find_library (QWT_LIBRARIES
 diff --git a/grc/CMakeLists.txt b/grc/CMakeLists.txt
 index f54aa4f..db0ce3c 100644
 --- a/grc/CMakeLists.txt
