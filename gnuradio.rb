@@ -30,7 +30,7 @@ class Gnuradio < Formula
   end
 
   def install
-    mkdir 'gnuradio-build' do
+    mkdir 'build' do
       system 'cmake', '..',
                       "-DCMAKE_PREFIX_PATH=#{prefix}",
                       *std_cmake_args
