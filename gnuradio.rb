@@ -54,7 +54,7 @@ class Gnuradio < Formula
 
   def caveats
     <<-EOS.undent
-    If you want to use custom blocks, you'll have to create this file:
+    If you want to use custom blocks, create this file:
 
     ~/.gnuradio/config.conf
       [grc]
