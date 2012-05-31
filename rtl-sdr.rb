@@ -1,4 +1,4 @@
-class Rtlsdr < Formula
+class RtlSdr < Formula
   homepage 'sdr.osmocom.org/trac/wiki/rtl-sdr'
   head 'git://git.osmocom.org/rtl-sdr.git'
 
