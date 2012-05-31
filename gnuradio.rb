@@ -10,9 +10,7 @@ class Gnuradio < Formula
     depends_on 'cmake' => :build
     depends_on 'Cheetah' => :python
     depends_on 'lxml' => :python
-    depends_on 'gfortran'
     depends_on 'numpy' => :python
-    depends_on 'umfpack'
     depends_on 'scipy' => :python
     depends_on 'matplotlib' => :python
     depends_on 'boost'
