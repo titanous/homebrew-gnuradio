@@ -1,3 +1,5 @@
+require 'formula'
+
 class Gnuradio < Formula
   homepage 'http://gnuradio.org'
   url  'http://gnuradio.org/redmine/attachments/download/326/gnuradio-3.6.0.tar.gz'
