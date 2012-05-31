@@ -24,6 +24,10 @@ class Gnuradio < Formula
   depends_on 'pyqwt' if ARGV.include?('--with-qt')
   depends_on 'doxygen' if ARGV.include?('--with-docs')
 
+  fails_with :clang do
+    cause "Volk compiles but doesn't work."
+  end
+
   def options
     [
       ['--with-qt', 'Build gr-qtgui.'],
@@ -37,10 +41,10 @@ class Gnuradio < Formula
 
   def install
     mkdir 'build' do
-      args = ["-DCMAKE_PREFIX_PATH=#{prefix}"]
+      args = ["-DCMAKE_PREFIX_PATH=#{prefix}"] + std_cmake_args
       args << '-DENABLE_GR_QTGUI=OFF' unless ARGV.include?('--with-qt')
       args << '-DENABLE_DOXYGEN=OFF' unless ARGV.include?('--with-docs')
-      system 'cmake', '..', *args, *std_cmake_args
+      system 'cmake', '..', *args
       system 'make'
       system 'make install'
     end

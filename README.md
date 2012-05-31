@@ -36,7 +36,7 @@ These steps have been tested on OS X Lion 10.7.4 with Xcode 4.3.2.
 - Install gnuradio (add `--with-qt` for `gr-qtgui`)
 
   ```sh
-  brew install gnuradio
+  brew install gnuradio --use-llvm
   ```
 - Create the `~/.gnuradio/config.conf` config file for custom block support
 
