@@ -1,10 +1,10 @@
 require 'formula'
 
 class Rtlsdr < Formula
-  homepage 'sdr.osmocom.org/trac/wiki/rtl-sdr'
+  homepage 'http://sdr.osmocom.org/trac/wiki/rtl-sdr'
 
   if ARGV.include?('--fm-fork')
-    head 'git://github.com/keenerd/rtl-sdr.git'
+    head 'https://github.com/keenerd/rtl-sdr.git'
     depends_on 'sox'
   else
     head 'git://git.osmocom.org/rtl-sdr.git'
