@@ -47,7 +47,7 @@ These steps have been tested on OS X Lion 10.7.4 with Xcode 4.3.2.
 
 ### Optional (for `gr-wxgui`)
 
-- Before installing `gnuradio1, install `wxmac` 2.9 using llvm (the stable
+- Before installing `gnuradio`, install `wxmac` 2.9 using llvm (the stable
   version is broken on Lion) with python bindings
 
   ```sh
