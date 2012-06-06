@@ -2,7 +2,7 @@ require 'formula'
 
 class GrBaz < Formula
   homepage 'http://wiki.spench.net/wiki/Gr-baz'
-  head 'https://github.com/balint256/gr-baz.git'
+  head 'https://github.com/balint256/gr-baz.git', :revision => '63c68feb'
 
   depends_on 'pkg-config' => :build
   depends_on 'automake' => :build
