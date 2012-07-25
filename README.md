@@ -17,21 +17,25 @@ These steps have been tested on OS X Lion 10.7.4 with Xcode 4.3.2.
   your shell (`exec $SHELL`)
 
   ```sh
-  export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
   export DYLD_FRAMEWORK_PATH=/usr/local/lib:$DYLD_FRAMEWORK_PATH
+  export PATH=/usr/local/share/python:$PATH
   ```
 
 - Install the python package prerequisites
 
   ```sh
+  brew install python --framework
   brew install gfortran umfpack swig
   ```
 
 - Install the prerequisite python packages
 
   ```sh
-  sudo easy_install pip
-  sudo pip install Cheetah lxml numpy scipy matplotlib
+  pip install numpy
+  pip install Cheetah lxml scipy
+  export LDFLAGS="-L/usr/X11/lib"
+  export CFLAGS="-I/usr/X11/include -I/usr/X11/include/freetype2 -I/usr/X11/include/libpng12"
+  pip install http://downloads.sourceforge.net/project/matplotlib/matplotlib/matplotlib-1.1.1/matplotlib-1.1.1.tar.gz
   ```
 
 - Install gnuradio (add `--with-qt` for `gr-qtgui`)
@@ -48,11 +52,10 @@ These steps have been tested on OS X Lion 10.7.4 with Xcode 4.3.2.
 
 ### Optional (for `gr-wxgui`)
 
-- Before installing `gnuradio`, install `wxmac` 2.9 using llvm (the stable
-  version is broken on Lion) with python bindings
+- Before installing `gnuradio`, install `wxmac` 2.9 with python bindings
 
   ```sh
-  brew install wxmac --devel --use-llvm --python
+  brew install wxmac --python
   ```
 
 ### Optional (for rtl-sdr devices)
