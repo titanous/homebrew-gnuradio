@@ -18,7 +18,7 @@ These steps have been tested on OS X Lion 10.7.4 with Xcode 4.3.2.
 
   ```sh
   export DYLD_FRAMEWORK_PATH=/usr/local/lib:$DYLD_FRAMEWORK_PATH
-  export PATH=/usr/local/share/python:$PATH
+  export PATH=/usr/local/bin:/usr/local/share/python:$PATH
   ```
 
 - Install the python package prerequisites
