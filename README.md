@@ -33,7 +33,8 @@ These steps have been tested on OS X Lion 10.7.4 with Xcode 4.3.2.
 
   ```sh
   pip install numpy
-  pip install Cheetah lxml scipy
+  pip install https://github.com/scipy/scipy/tarball/v0.11.0rc2
+  pip install Cheetah lxml
   export LDFLAGS="-L/usr/X11/lib"
   export CFLAGS="-I/usr/X11/include -I/usr/X11/include/freetype2 -I/usr/X11/include/libpng12"
   pip install http://downloads.sourceforge.net/project/matplotlib/matplotlib/matplotlib-1.1.1/matplotlib-1.1.1.tar.gz
