@@ -25,6 +25,7 @@ These steps have been tested on OS X Lion 10.7.4 with Xcode 4.3.2.
 
   ```sh
   brew install python --framework
+  brew tap Homebrew/homebrew-dupes
   brew install gfortran umfpack swig
   ```
 
