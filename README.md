@@ -13,11 +13,10 @@ These steps have been tested on OS X Lion 10.7.4 with Xcode 4.3.2.
   brew tap titanous/homebrew-gnuradio
   ```
 
-- Add these lines to your profile (ie `~/.bash_profile` or `~/.zshenv`) and reload
+- Add this line to your profile (ie `~/.bash_profile` or `~/.zshenv`) and reload
   your shell (`exec $SHELL`)
 
   ```sh
-  export DYLD_FRAMEWORK_PATH=/usr/local/lib:$DYLD_FRAMEWORK_PATH
   export PATH=/usr/local/bin:/usr/local/share/python:$PATH
   ```
 
