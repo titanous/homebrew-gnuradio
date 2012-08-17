@@ -5,7 +5,8 @@ that makes it easier get GNU Radio and friends running on OS X.
 
 ## Installation
 
-These steps have been tested on OS X Lion 10.7.4 with Xcode 4.3.2.
+These steps have been tested on Lion 10.7.4 with Xcode 4.3.2 and Mountain Lion
+10.8 with Xcode 4.4.1.
 
 - Add this repository as a brew tap
 
