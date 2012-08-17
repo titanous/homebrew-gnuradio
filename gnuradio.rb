@@ -12,6 +12,7 @@ class Gnuradio < Formula
   depends_on 'numpy' => :python
   depends_on 'scipy' => :python
   depends_on 'matplotlib' => :python
+  depends_on 'python'
   depends_on 'boost'
   depends_on 'cppunit'
   depends_on 'gsl'
@@ -46,10 +47,17 @@ class Gnuradio < Formula
       args = ["-DCMAKE_PREFIX_PATH=#{prefix}", "-DQWT_INCLUDE_DIRS=#{HOMEBREW_PREFIX}/lib/qwt.framework/Headers"] + std_cmake_args
       args << '-DENABLE_GR_QTGUI=OFF' unless ARGV.include?('--with-qt')
       args << '-DENABLE_DOXYGEN=OFF' unless ARGV.include?('--with-docs')
+      args << "-DPYTHON_LIBRARY=#{python_path}/Frameworks/Python.framework/"
       system 'cmake', '..', *args
       system 'make'
       system 'make install'
     end
+  end
+
+  def python_path
+    python = Formula.factory('python')
+    kegs = python.rack.children.reject { |p| p.basename.to_s == '.DS_Store' }
+    kegs.find { |p| Keg.new(p).linked? } || kegs.last
   end
 
   def caveats
