@@ -24,8 +24,12 @@ These steps have been tested on Lion 10.7.4 with Xcode 4.3.2 and Mountain Lion
 - Install the prerequisite python packages
 
   ```sh
-  export LDFLAGS="-L/usr/X11/lib" CFLAGS="-I/usr/X11/include -I/usr/X11/include/freetype2 -I/usr/X11/include/libpng12"
-  pip install numpy Cheetah lxml https://github.com/scipy/scipy/tarball/v0.11.0rc2 http://downloads.sourceforge.net/project/matplotlib/matplotlib/matplotlib-1.1.1/matplotlib-1.1.1.tar.gz
+  pip install numpy
+  pip install https://github.com/scipy/scipy/tarball/v0.11.0rc2
+  pip install Cheetah lxml
+  export LDFLAGS="-L/usr/X11/lib"
+  export CFLAGS="-I/usr/X11/include -I/usr/X11/include/freetype2 -I/usr/X11/include/libpng12"
+  pip install http://downloads.sourceforge.net/project/matplotlib/matplotlib/matplotlib-1.1.1/matplotlib-1.1.1.tar.gz
   ```
 
 - Install gnuradio (add `--with-qt` for `gr-qtgui`)
