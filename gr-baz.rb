@@ -12,8 +12,9 @@ class GrBaz < Formula
 
   def install
     args = ["--prefix=#{prefix}"]
-    system "autoreconf -i"
-    system "./configure", *args
+    system "sh bootstrap"
+    system "sh configure", *args
+    system "make"
     system "make install"
   end
 end
