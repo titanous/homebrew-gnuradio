@@ -6,7 +6,7 @@ class Gnuradio < Formula
   sha1 'ee4c40b366d94887511eefa6ce52df4bdbc9d105'
   head 'git://gnuradio.org/gnuradio.git'
 
-  depends_on 'apple-gcc4.2' => :build
+  depends_on 'apple-gcc42' => :build
   depends_on 'cmake' => :build
   depends_on 'Cheetah' => :python
   depends_on 'lxml' => :python
