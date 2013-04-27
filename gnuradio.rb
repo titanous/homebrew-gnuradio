@@ -6,6 +6,7 @@ class Gnuradio < Formula
   sha1 'ee4c40b366d94887511eefa6ce52df4bdbc9d105'
   head 'git://gnuradio.org/gnuradio.git'
 
+  depends_on 'apple-gcc42' => :build
   depends_on 'cmake' => :build
   depends_on 'Cheetah' => :python
   depends_on 'lxml' => :python
@@ -43,6 +44,12 @@ class Gnuradio < Formula
   end
 
   def install
+
+	  # Force compilation with gcc-4.2
+	  ENV['CC'] = '/usr/local/bin/gcc-4.2'
+	  ENV['LD'] = '/usr/local/bin/gcc-4.2'
+	  ENV['CXX'] = '/usr/local/bin/g++-4.2'
+
     mkdir 'build' do
       args = ["-DCMAKE_PREFIX_PATH=#{prefix}", "-DQWT_INCLUDE_DIRS=#{HOMEBREW_PREFIX}/lib/qwt.framework/Headers"] + std_cmake_args
       args << '-DENABLE_GR_QTGUI=OFF' unless ARGV.include?('--with-qt')
