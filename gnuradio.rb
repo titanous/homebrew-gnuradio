@@ -2,9 +2,9 @@ require 'formula'
 
 class Gnuradio < Formula
   homepage 'http://gnuradio.org'
-  url  'http://gnuradio.org/releases/gnuradio/gnuradio-3.6.1.tar.gz'
-  sha1 'ee4c40b366d94887511eefa6ce52df4bdbc9d105'
-  head 'git://gnuradio.org/gnuradio.git'
+  url  'http://gnuradio.org/releases/gnuradio/gnuradio-3.6.5.1.tar.gz'
+  sha1 '8d3846dc1d00c60b74f06c0bb8f40d57ee257b5a'
+  head 'http://gnuradio.org/git/gnuradio.git'
 
   depends_on 'apple-gcc42' => :build
   depends_on 'cmake' => :build
