@@ -10,6 +10,10 @@ class Rtlsdr < Formula
   depends_on 'cmake' => :build
   depends_on 'libusb'
 
+  if MacOS.xcode_version.to_f >= 4.3
+    depends_on 'autoconf'
+  end
+
   def install
     args = ["--prefix=#{prefix}"]
     system "autoreconf -i"
